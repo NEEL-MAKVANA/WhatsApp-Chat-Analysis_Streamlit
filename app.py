@@ -5,10 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.graph_objects as go
 
-st.set_page_config(
-    page_title="Whats app chat analyser",
-    # page_icon="nk.png",  # Provide the path to your logo file
-)
+st.set_page_config(page_title="Whats app chat analyser")
 
 st.sidebar.title("Welcome to chat analysis app")
 
