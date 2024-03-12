@@ -41,6 +41,7 @@ def authenticate_admin(username, password):
 
 
 def main():
+
     st.title("Admin Login")
 
     username = st.text_input("Username")
@@ -49,7 +50,8 @@ def main():
     if st.button("Login"):
         if authenticate_admin(username, password):
             st.success("Login successful!")
-            subprocess.Popen(["streamlit", "run", "--server.port", "8504", "admin.py"])
+            # st.session_state.admin_is_logged_in = True
+            subprocess.Popen(["streamlit", "run", "admin_dashboard.py"])
 
             # Redirect to admin dashboard or another page
             # st.write("Welcome, Admin!")

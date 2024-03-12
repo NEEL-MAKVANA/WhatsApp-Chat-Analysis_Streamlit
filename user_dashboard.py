@@ -4,12 +4,16 @@ import helper
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.graph_objects as go
+import subprocess
+
 
 st.set_page_config(page_title="Whats app chat analyser")
 
 st.sidebar.title("Welcome to chat analysis app")
 
 uploaded_file = st.sidebar.file_uploader("Choose a file")
+
+
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
     data = bytes_data.decode("utf-8")
@@ -24,7 +28,14 @@ if uploaded_file is not None:
     user_list.insert(0, "Overall")
     selected_user = st.sidebar.selectbox("Show analysis with respect to", user_list)
 
-    if st.sidebar.button("Show Analysis"):
+    click = st.sidebar.button("Show Analysis")
+    # Logout button
+    st.sidebar.write("If you want to logout then click below button")
+    if st.sidebar.button("Logout"):
+        subprocess.Popen(["streamlit", "run", "user_login.py"])
+        st.stop()
+
+    if click:
 
         # Stats Area
         num_messages, words, num_media_messages, num_links = helper.fetch_stats(
