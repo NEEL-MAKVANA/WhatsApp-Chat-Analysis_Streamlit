@@ -84,6 +84,7 @@ def main():
             st.warning("Username already exists. Please choose a different username.")
         else:
             if add_user(conn, username, hash_password):
+
                 # Clear form fields on successful signup
                 subprocess.Popen(
                     # ["streamlit", "run", "--server.port", "8506", "user_dashboard.py"]

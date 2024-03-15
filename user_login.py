@@ -57,6 +57,7 @@ def main():
         if user:
             st.success("Login successful!")
             # Run user_dashboard.py in a new process
+
             subprocess.Popen(
                 # ["streamlit", "run", "--server.port", "8505", "user_dashboard.py"]
                 ["streamlit", "run", "user_dashboard.py"]

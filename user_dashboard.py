@@ -151,7 +151,7 @@ if uploaded_file is not None:
         ax.barh(most_common_df[0], most_common_df[1])
         plt.xticks(rotation="vertical")
 
-        st.title("Most commmon words")
+        st.title("Most common words")
         st.pyplot(fig)
 
         # sentiment added
@@ -200,6 +200,7 @@ if uploaded_file is not None:
 
         # Display emoji list
         # with st.expander("Emoji List"):
+        # emoji_df.columns = ["Emoji", "Count"]
         st.dataframe(emoji_df)
 
         # Aggregate emojis by category or frequency

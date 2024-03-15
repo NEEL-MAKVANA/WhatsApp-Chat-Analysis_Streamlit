@@ -51,6 +51,7 @@ def main():
         if authenticate_admin(username, password):
             st.success("Login successful!")
             # st.session_state.admin_is_logged_in = True
+
             subprocess.Popen(["streamlit", "run", "admin_dashboard.py"])
 
             # Redirect to admin dashboard or another page
