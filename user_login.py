@@ -70,6 +70,8 @@ def main():
             # ["streamlit", "run", "--server.port", "8501", "user_signup.py"]
             ["streamlit", "run", "user_signup.py"]
         )
+    if st.button("Forgot Password"):
+        subprocess.Popen(["streamlit", "run", "forgot_password.py"])
 
 
 if __name__ == "__main__":
