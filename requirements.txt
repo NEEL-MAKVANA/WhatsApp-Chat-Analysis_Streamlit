@@ -7,4 +7,3 @@ pandas
 emoji
 psycopg2-binary
 textblob
-pyperclip

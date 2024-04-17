@@ -57,14 +57,6 @@ if uploaded_file is not None:
             st.header("Links Shared")
             st.title(num_links)
 
-        # monthly timeline
-        # st.title("Monthly Timeline")
-        # timeline = helper.monthly_timeline(selected_user, df)
-        # fig, ax = plt.subplots()
-        # ax.plot(timeline["time"], timeline["message"], color="green")
-        # plt.xticks(rotation="vertical")
-        # st.pyplot(fig)
-
         st.title("Monthly Timeline")
         timeline = helper.monthly_timeline(
             selected_user, df
@@ -176,19 +168,6 @@ if uploaded_file is not None:
                 df.groupby("user")["sentiment"].value_counts().unstack().fillna(0)
             )
             st.write(sentiment_by_user)
-
-        # # emoji analysis
-        # emoji_df = helper.emoji_helper(selected_user, df)
-        # st.title("Emoji Analysis")
-
-        # col1, col2 = st.columns(2)
-
-        # with col1:
-        #     st.dataframe(emoji_df)
-        # with col2:
-        #     fig, ax = plt.subplots()
-        #     ax.pie(emoji_df[1].head(), labels=emoji_df[0].head(), autopct="%0.2f")
-        #     st.pyplot(fig)
 
         # Emoji analysis
         emoji_df = helper.emoji_helper(selected_user, df)
